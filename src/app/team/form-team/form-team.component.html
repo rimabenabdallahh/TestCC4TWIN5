@@ -1,0 +1,40 @@
+<form [formGroup]="teamForm">
+    <div>
+        <label>Name</label>
+        <input type="text" placeholder="name" formControlName="name">
+        <div class="error" *ngFor="let error of getErrorMessage('name')">
+            {{ error }}
+        </div>
+    </div>
+    
+    <div>
+        <label>ProjectName</label>
+        <textarea placeholder="projectname" formControlName="projectname"></textarea>
+        <div class="error" *ngFor="let error of getErrorMessage('projectname')">
+            {{ error }}
+        </div>
+    </div>
+    <div>
+        <label>ProjectName</label>
+        <textarea placeholder="projectName" formControlName="projectName"></textarea>
+        <div class="error" *ngFor="let error of getErrorMessage('projectName')">
+            {{ error }}
+        </div>
+    </div>
+    <div>
+        <label>Level</label>
+        <textarea placeholder="level" formControlName="level"></textarea>
+        <div class="error" *ngFor="let error of getErrorMessage('level')">
+            {{ error }}
+        </div>
+    </div>
+
+    <div>
+        <label>projectDescription</label>
+        <textarea placeholder="projectDescription" formControlName="projectDescription"></textarea>
+        <div class="error" *ngFor="let error of getErrorMessage('projectDescription')">
+            {{ error }}
+        </div>
+    </div>
+    <button type="submit" (click)="submit()"[disabled]="teamForm.invalid">Ajouter</button>
+</form>
